@@ -3432,9 +3432,8 @@ DLG SPR_o
 """
 You activate the family-contact computer.
 {ActionsDay4 = ActionsDay4 + 1}{
-  - Birthday < 1 ?
-    You receive a message back from your family, but the strength of the signal is much weaker today...
-    You hear the voice of your partner: "Hey, I-...busy, and if-...understand-...least you-...was call once-...I gav-...gift, but-...you.”
+  - ActionsDay4 > 2 ?
+    However, you do not have enough power to send another signal to Earth right now. Perhaps you'll try again tomorrow.
   - Birthday == 1 ?
     You receive a message back from your family, but the strength of the signal is much weaker today...
     {sequence
@@ -3443,8 +3442,9 @@ You activate the family-contact computer.
     }
     {Family = Family + 1}
 {Ignore = Ignore - 1}
-  - ActionsDay4 > 2 ?
-    However, you do not have enough power to send another signal to Earth right now. Perhaps you'll try again tomorrow.
+  - Birthday < 1 ?
+    You receive a message back from your family, but the strength of the signal is much weaker today...
+    You hear the voice of your partner: "Hey, I-...busy, and if-...understand-...least you-...was call once-...I gav-...gift, but-...you.”
 }
 """
 
@@ -3509,14 +3509,14 @@ DLG SPR_10
 """
 You activate the family-contact computer.
 {ActionsDay5 = ActionsDay5 + 1}{
-  - Ignore == 2 ?
-    ...But you don't receive a signal back.
+  - ActionsDay5 > 1 ?
+    However, you do not have enough power to send another signal to Earth right now.
   - Ignore < 1 ?
     You receive a message back from your family, but the strength of the signal is almost nonexistent...
     You struggle to hear the voice of your partner: "Hey-...know you-...but-...let you know-...glad you-...every day."
     {Family = Family + 1}
-  - ActionsDay5 > 1 ?
-    However, you do not have enough power to send another signal to Earth right now.
+  - Ignore == 2 ?
+    ...But you don't receive a signal back.
   - Ignore == 1 ?
     You receive a message back from your family, but the strength of the signal is almost nonexistent...
     You struggle to hear the voice of your partner: "...good-...your voi-...Sorry for-...-time."
