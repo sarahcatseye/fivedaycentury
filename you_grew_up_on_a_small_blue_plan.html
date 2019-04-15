@@ -158,7 +158,7 @@ e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
 2u,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
 NAME Interior Day 5
 ITM 3 8,11
-END 0 14,11
+EXT 14,11 c 2,7
 PAL 0
 
 ROOM 7
@@ -270,6 +270,29 @@ e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
 NAME transition 5
 ITM c 5,7
 EXT 13,7 5 8,12
+PAL 0
+
+ROOM c
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,5c,5c,5c,5c,5c,5c,5c,5c,5c,5c,5k,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+e,e,e,e,e,e,e,e,e,e,e,e,e,e,e,e
+NAME ending
+ITM d 8,7
+ITM e 3,7
+END 1 13,7
 PAL 0
 
 TIL 10
@@ -2203,6 +2226,17 @@ TIL 5j
 10000001
 11000011
 
+TIL 5k
+11111111
+11100111
+11100111
+11000011
+10000001
+01000010
+11011011
+11011011
+NAME self
+
 SPR 10
 11111111
 10000001
@@ -3161,6 +3195,42 @@ ITM c
 11111111
 DLG ITM_9
 
+ITM d
+11111111
+10011001
+00000000
+00000000
+10000001
+11000011
+11100111
+11111111
+NAME relationships
+DLG ITM_c
+
+ITM e
+11100111
+11000011
+11011011
+11011011
+11000011
+11000011
+10000001
+10111101
+NAME work
+DLG ITM_b
+
+ITM f
+11111111
+11100111
+11100111
+11000011
+10000001
+01000010
+11011011
+11011011
+NAME self
+DLG ITM_d
+
 DLG SPR_0
 grrrrr
 
@@ -3604,6 +3674,84 @@ DLG SPR_18
 }
 """
 
+DLG ITM_b
+"""
+{
+  - Work == 0 ?
+    You've landed safely on the strange new planet, thus successfully completing the first half of your mission. You attempt to get a signal out to your mission supervisor  to inform them of a job well done, but as you try to power on your communicator, you find that you haven't collected any solar energy here as you'd planned. Your ship's solar thermal collector is irreparably damaged, along with many other of your ship's vital systems and equipment. With your ship in such a poor condition, you wonder if it will even be possible to escape this world at all, or if you're completely stranded forever...
+  - Work == 1 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in rather poor condition. You regret not maintaining it diligently enough throughout your journey, but you can tell that your communication systems are at least still functioning. However, you notice a small asteroid lodged inside your ship's thrusters...Returning home at this rate may prove difficult, if not impossible...
+  - Work == 2 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in rather poor condition. You regret not maintaining it diligently enough throughout your journey, but you can tell that your communication systems are at least still functioning. However, you notice a small asteroid lodged inside your ship's thrusters...Returning home at this rate may prove difficult, if not impossible...
+  - Work == 3 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in rather poor condition. You regret not maintaining it diligently enough throughout your journey, but you can tell that your communication systems are at least still functioning. However, you notice a small asteroid lodged inside your ship's thrusters...Returning home at this rate may prove difficult, if not impossible...
+  - Work == 4 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in generally good condition. Some of your vessel's peripherals appear to be lightly damaged, but otherwise there is little to worry about. After collecting enough solar energy, you manage to send a signal to your mission supervisor on Earth.
+  - Work == 5 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in generally good condition. Some of your vessel's peripherals appear to be lightly damaged, but otherwise there is little to worry about. After collecting enough solar energy, you manage to send a signal to your mission supervisor on Earth.
+  - Work == 6 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in generally good condition. Some of your vessel's peripherals appear to be lightly damaged, but otherwise there is little to worry about. After collecting enough solar energy, you manage to send a signal to your mission supervisor on Earth.
+  - Work == 7 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in generally good condition. Some of your vessel's peripherals appear to be lightly damaged, but otherwise there is little to worry about. After collecting enough solar energy, you manage to send a signal to your mission supervisor on Earth. 
+  - Work == 8 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in generally good condition. Some of your vessel's peripherals appear to be lightly damaged, but otherwise there is little to worry about. After collecting enough solar energy, you manage to send a signal to your mission supervisor on Earth.
+  - Work > 8 ?
+    You inspect your ship as you land on the strange new planet, and find that it is in utterly pristine condition. Due to your efforts along the way, it's almost a more capable vessel than it was on the day you first left Earth. You have more than enough reserve power to send a signal to your mission supervisor on Earth.
+}
+"""
+
+DLG ITM_c
+"""
+{
+  - Family == 0 ? 
+    You manage to get a signal out to your family, but you don't receive a signal back. Despite your pleas, your voice is only met with silence.
+  - Family == 1 ?
+    You manage to get a signal out to your family, but you don't receive a signal back...Eventually you try again, and this time, you receive a reply. You hear the voice of your partner: "...Hello? Honey? Oh, you're okay? That's good. After you hadn't called for a while, I thought something was wrong, so I talked with your supervisor. He told me they'd never lost contact with your ship...So why didn't you call us? I know, I know, you couldn't call all day, every day. But we were worried about you...just enough to show us you were alright would've been nice...Still, I'm happy for you. Please don't make me worry like that again, okay? Be safe up there..."
+  - Family == 2 ?
+    You manage to get a signal out to your family, but you don't receive a signal back...Eventually you try again, and this time, you receive a reply. You hear the voice of your partner: "...Hello? Honey? Oh, you're okay? That's good. After you hadn't called for a while, I thought something was wrong, so I talked with your supervisor. He told me they'd never lost contact with your ship...So why didn't you call us? I know, I know, you couldn't call all day, every day. But we were worried about you...just enough to show us you were alright would've been nice...Still, I'm happy for you. Please don't make me worry like that again, okay? Be safe up there..."
+  - Family == 3 ?
+    You manage to get a signal out to your family, but you don't receive a signal back...Eventually you try again, and this time, you receive a reply. You hear the voice of your partner: "...Hello? Honey? Oh, you're okay? That's good. After you hadn't called for a while, I thought something was wrong, so I talked with your supervisor. He told me they'd never lost contact with your ship...So why didn't you call us? I know, I know, you couldn't call all day, every day. But we were worried about you...just enough to show us you were alright would've been nice...Still, I'm happy for you. Please don't make me worry like that again, okay? Be safe up there..."
+  - Family == 4 ?
+    You manage to get a signal out to your family, and after receiving a signal back, you hear the voice of your partner: "Hey, honey! Did you make it there safe? Great, I'm so proud of you! I knew you could do it, babe...It's alright, I know you had other things to do. I'm glad you at least called when you could. But don’t ever leave me worried like that again, okay...I'm just happy everything went alright out there. You have to take some pictures for me and the kids. Please promise you'll come back?"
+  - Family == 5 ?
+    You manage to get a signal out to your family, and after receiving a signal back, you hear the voice of your partner: "Hey, honey! Did you make it there safe? Great, I'm so proud of you! I knew you could do it, babe...It's alright, I know you had other things to do. I'm glad you at least called when you could. But don’t ever leave me worried like that again, okay...I'm just happy everything went alright out there. You have to take some pictures for me and the kids. Please promise you'll come back?"
+  - Family == 6 ?
+    You manage to get a signal out to your family, and after receiving a signal back, you hear the voice of your partner: "Hey, honey! Did you make it there safe? Great, I'm so proud of you! I knew you could do it, babe...It's alright, I know you had other things to do. I'm glad you at least called when you could. But don’t ever leave me worried like that again, okay...I'm just happy everything went alright out there. You have to take some pictures for me and the kids. Please promise you'll come back?"
+  - Family == 7 ?
+    You manage to get a signal out to your family, and after receiving a signal back, you hear the voice of your partner: "Hey, honey! Did you make it there safe? Great, I'm so proud of you! I knew you could do it, babe...It's alright, I know you had other things to do. I'm glad you at least called when you could. But don’t ever leave me worried like that again, okay...I'm just happy everything went alright out there. You have to take some pictures for me and the kids. Please promise you'll come back?"
+  - Family == 8 ?
+    You manage to get a signal out to your family, and after receiving a signal back, you hear the voice of your partner: "Hey, honey! Did you make it there safe? Great, I'm so proud of you! I knew you could do it, babe...It's alright, I know you had other things to do. I'm glad you at least called when you could. But don’t ever leave me worried like that again, okay...I'm just happy everything went alright out there. You have to take some pictures for me and the kids. Please promise you'll come back?"
+  - Family > 8 ?
+    Despite the poor condition of your ship, through desperation you manage to get one last signal out to your family so far away on Earth. You receive a signal back, and you hear the voice of your partner: "Hello? Honey!? Did you make it there safe? Oh, I'm so proud of you! I knew you could do it! I was so worried the whole week...You know I thought about you every day, hoping you'd get there safe and sound. All the kids ever talked about with their friends the whole week was you, you're practically a superstar! I'm almost afraid no one will believe me when I tell them about you!...What? What about your ship? What do you mean you might not be coming home?" You explain to your partner the dire condition of your ship, and your grim prospects of returning to Earth. Your partner's brokenhearted weeping is all you'll be able to hear for the next few nights...
+}
+"""
+
+DLG ITM_d
+"""
+{
+  - Self == 0 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth...However, you take another breath and feel a sudden rush of nausea wash over you. For whatever reason, you neglected to eat even once during your journey. But now, as you lie crumbling on the ground of this alien rock, you at least find solace in the fact that you completed this much of your mission....Your last thoughts are of home.
+  - Self == 1 ?
+    After inspecting your ship and calling your family, you take a step out onto the planet you've landed on. You fail to keep your balance as your legs wobble under your own weight. You can feel your atrophied muscles struggling to keep you on your feet, and your breath is short and heavy. The atmosphere here is safe to breathe, as expected, but the shock of your inability to adjust has taken you by surprise. With great effort, you rise to your feet, and prepare to face the challenge of taming this new land...If you can survive, that is.
+  - Self == 2 ?
+    After inspecting your ship and calling your family, you take a step out onto the planet you've landed on. You fail to keep your balance as your legs wobble under your own weight. You can feel your atrophied muscles struggling to keep you on your feet, and your breath is short and heavy. The atmosphere here is safe to breathe, as expected, but the shock of your inability to adjust has taken you by surprise. With great effort, you rise to your feet, and prepare to face the challenge of taming this new land...If you can survive, that is.
+  - Self == 3 ?
+    After inspecting your ship and calling your family, you take a step out onto the planet you've landed on. You fail to keep your balance as your legs wobble under your own weight. You can feel your atrophied muscles struggling to keep you on your feet, and your breath is short and heavy. The atmosphere here is safe to breathe, as expected, but the shock of your inability to adjust has taken you by surprise. With great effort, you rise to your feet, and prepare to face the challenge of taming this new land...If you can survive, that is.
+  - Self == 4 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 5 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 6 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 7 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 8 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way. 
+  - Self > 8 ?
+    On the surface of this new planet, you take a deep, hearty breath. Just as you were told, the air here is just as breathable as it was on Earth. Your body feels vital and strong, and thanks to this planet's lighter gravity, you take a mighty leap into the air and let out a shout of joy. Despite your childlike excitement at the prospect of exploring a whole new world, the reality of your situation concerning your ship and your family sets in...Suddenly, you become stricken with an intense sense of guilt... 
+}
+"""
+
 END 0
 """
 {
@@ -3670,6 +3818,33 @@ END 0
   - Self > 8 ?
     On the surface of this new planet, you take a deep, hearty breath. Just as you were told, the air here is just as breathable as it was on Earth. Your body feels vital and strong, and thanks to this planet's lighter gravity, you take a mighty leap into the air and let out a shout of joy. Despite your childlike excitement at the prospect of exploring a whole new world, the reality of your situation concerning your ship and your family sets in...Suddenly, you become stricken with an intense sense of guilt... 
 }    
+"""
+
+END 1
+"""
+{
+  - Self == 0 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth...However, you take another breath and feel a sudden rush of nausea wash over you. For whatever reason, you neglected to eat even once during your journey. But now, as you lie crumbling on the ground of this alien rock, you at least find solace in the fact that you completed this much of your mission....Your last thoughts are of home.
+  - Self == 1 ?
+    After inspecting your ship and calling your family, you take a step out onto the planet you've landed on. You fail to keep your balance as your legs wobble under your own weight. You can feel your atrophied muscles struggling to keep you on your feet, and your breath is short and heavy. The atmosphere here is safe to breathe, as expected, but the shock of your inability to adjust has taken you by surprise. With great effort, you rise to your feet, and prepare to face the challenge of taming this new land...If you can survive, that is.
+  - Self == 2 ?
+    After inspecting your ship and calling your family, you take a step out onto the planet you've landed on. You fail to keep your balance as your legs wobble under your own weight. You can feel your atrophied muscles struggling to keep you on your feet, and your breath is short and heavy. The atmosphere here is safe to breathe, as expected, but the shock of your inability to adjust has taken you by surprise. With great effort, you rise to your feet, and prepare to face the challenge of taming this new land...If you can survive, that is.
+  - Self == 3 ?
+    After inspecting your ship and calling your family, you take a step out onto the planet you've landed on. You fail to keep your balance as your legs wobble under your own weight. You can feel your atrophied muscles struggling to keep you on your feet, and your breath is short and heavy. The atmosphere here is safe to breathe, as expected, but the shock of your inability to adjust has taken you by surprise. With great effort, you rise to your feet, and prepare to face the challenge of taming this new land...If you can survive, that is.
+  - Self == 4 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 5 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 6 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 7 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way.
+  - Self == 8 ?
+    On the surface of this new planet, you take a deep breath. Just as you were told, the air here is just as breathable as it was on Earth. The lighter gravity takes a bit of getting used to, but it isn't too bad. The prospect of having to eat your "space food" rations every day is less than appealing, but you think making a living here will be rewarding in it's own way. 
+  - Self > 8 ?
+    On the surface of this new planet, you take a deep, hearty breath. Just as you were told, the air here is just as breathable as it was on Earth. Your body feels vital and strong, and thanks to this planet's lighter gravity, you take a mighty leap into the air and let out a shout of joy. Despite your childlike excitement at the prospect of exploring a whole new world, the reality of your situation concerning your ship and your family sets in...Suddenly, you become stricken with an intense sense of guilt... 
+}
+You wonder how you would have dealt with this distance another time.
 """
 
 VAR ActionsDay1
